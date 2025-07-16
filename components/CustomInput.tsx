@@ -15,7 +15,7 @@ const CustomInput = ({
     return (
       <View className='w-full'>
         <Text className='label'> {label} </Text>
-
+ 
         <TextInput
           className={cn('input', isFocused ? 'border-primary' : 'border-gray-300')}
           autoCapitalize='none'
@@ -26,7 +26,7 @@ const CustomInput = ({
           keyboardType={keyboardType}
           onFocus={()=> setIsFocused(true)}
           onBlur={()=> setIsFocused(false)}
-          placeholder='placeholder'
+          placeholder={placeholder}
           placeholderTextColor="#888"
           />
       </View>
