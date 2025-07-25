@@ -1,4 +1,3 @@
-import { Platform } from "react-native";
 import { CreateUserPrams, SignInParams } from "@/type";
 import { Account, Avatars, Client, Databases, ID, Query } from "react-native-appwrite";
 
@@ -7,7 +6,7 @@ export const appwriteConfig = {
     projectId : process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
     Platform : "com.delevery.fast",
     databaseId :"68754612001d7a136dcf",
-    userCollectionId : "68754634003787cdc1fe",
+    userCollectionId : "687952160019e58777d8"
 }
 
 export const client = new Client();
@@ -24,25 +23,25 @@ const avatars = new Avatars(client)
 export const createUser = async({email, password, name} : CreateUserPrams) => {
     try{
         const newAccount = await account.create(ID.unique(), email, password, name);
-        if(!newAccount) {
-            throw new Error("Failed to create user account");
+        if(!newAccount) throw new Error("Failed to create user account");
 
-            await signIn({email, password});
+        await signIn({email, password});
 
-            const avatarUrl = avatars.getInitialsURL(name);
+        const avatarUrl = avatars.getInitialsURL(name);
 
-            return await database.createDocument(
-                appwriteConfig.databaseId,
-                appwriteConfig.userCollectionId,
-                ID.unique(),
-                {
-                    accountId : newAccount.$id,
-                    name,
-                    email,
-                    avatar: avatarUrl,
-                }
-            );
-        }
+        const newUser = await database.createDocument(
+            appwriteConfig.databaseId,
+            appwriteConfig.userCollectionId,
+            ID.unique(),
+            {
+                accountId: newAccount.$id,
+                name,
+                email,
+                avatar: avatarUrl
+            },
+        )
+            return newUser;
+            
     }catch(e){
         throw new Error(e as string)
     }
