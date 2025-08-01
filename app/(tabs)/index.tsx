@@ -1,11 +1,10 @@
-import { images, offers } from "@/constants";
-import { Fragment } from "react";
-import { FlatList, Pressable, Text, View, Image, TouchableOpacity, ScrollView, Button } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import cn from "clsx";
 import CartButton from "@/components/CartButton";
-import * as Sentry from '@sentry/react-native';
+import { images, offers } from "@/constants";
 import useAuthStore from "@/store/auth.store";
+import cn from "clsx";
+import { Fragment } from "react";
+import { FlatList, Image, Pressable, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
 
@@ -44,7 +43,7 @@ export default function Index() {
             </View>
           )
         }}
-        contentContainerClassName="pd-28 px-5"
+        contentContainerClassName="pb-40 px-5"
 
         ListHeaderComponent={() => (
           <View className="flex-between flex-row w-full my-5 px-5">
