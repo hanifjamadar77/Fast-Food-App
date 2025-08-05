@@ -4,6 +4,7 @@ import React, { act, useState } from 'react'
 import cn from "clsx";
 import {View, Text, Image, FlatList, TouchableOpacity, Platform} from 'react-native'
 
+
 const Filter = ({categories}: { categories: Category[] }) => {
     const searchParams = useLocalSearchParams();
     const [active, setActive] = useState(searchParams.categories || '');
