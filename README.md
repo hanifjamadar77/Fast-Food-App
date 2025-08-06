@@ -1,50 +1,56 @@
-# Welcome to your Expo app 👋
+# 🍔 React Native Food Ordering App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern, full-stack mobile application for food ordering built with **React Native (Expo)** and powered by **Appwrite**. This app provides users with seamless browsing of menu items, customizable orders, cart management, and secure authentication — all in one place.
 
-## Get started
+# Screenshot
 
-1. Install dependencies
+<img width="278" height="561" alt="image" src="https://github.com/user-attachments/assets/03e387ee-af6a-4cfe-91e7-19de7f2d8719" /> <img width="311" height="712" alt="image" src="https://github.com/user-attachments/assets/7a58d083-6297-42ac-9c69-272d67f63396" /> | <img width="317" height="820" alt="image" src="https://github.com/user-attachments/assets/188d110e-59b0-4eb4-9e17-611e86d671cd" />
 
-   ```bash
-   npm install
-   ```
 
-2. Start the app
 
-   ```bash
-   npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🚀 Features
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 🔐 User Authentication
+- Sign up, sign in, and session management via Appwrite Auth.
+- Protected routes using `useAuthStore()` and conditional navigation.
 
-## Get a fresh project
+### 🍕 Dynamic Menu
+- Browse items by category (e.g., Pizza, Drinks, Sides).
+- Item details include name, image, price, calories, and protein.
+- Powered by Appwrite's Database and Storage.
 
-When you're ready, run:
+### 🧩 Customizations
+- Add-ons like sauces, crusts, toppings, etc.
+- Each menu item is linked with its available customizations.
+- Dynamically displayed on the item detail screen.
 
-```bash
-npm run reset-project
-```
+### 🛒 Cart System
+- Add items to the cart with quantity and customization options.
+- View total price and item summary.
+- Remove or update cart items.
+- Cart state managed globally using Zustand.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 📂 Appwrite Integration
+- **Authentication**: Secure login & signup
+- **Database**: Stores users, menu items, categories, customizations
+- **Storage**: Image upload and retrieval for menu items
+- **Functions**: Optional seeding and backend logic
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🧱 Tech Stack
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+| Technology     | Description                                      |
+|----------------|--------------------------------------------------|
+| React Native   | Frontend mobile framework (Expo CLI)             |
+| Appwrite       | BaaS for auth, database, storage                 |
+| Zustand        | Lightweight global state management              |
+| Tailwind (NativeWind) | Utility-first CSS styling in RN         |
+| TypeScript     | Strongly typed codebase                          |
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
